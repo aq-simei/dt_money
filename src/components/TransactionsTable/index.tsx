@@ -9,7 +9,7 @@ interface Transaction {
   type: string;
   category: string;
   createdAt: string;
-}
+};
 
 export function TransactionsTable() {
   const {transactions} = useContext(TransactionsContext);
