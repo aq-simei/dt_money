@@ -12,21 +12,7 @@ createServer({
   seeds(server) {
     server.db.loadData({
       transactions: [
-        {
-          id: 1,
-          title: 'Website freelance',
-          type: 'deposit',
-          category: 'dev',
-          amount: 6000,
-          createdAt: new Date('2021-02-12'),
-        },
-        {id: 2,
-          title: 'Aluguel',
-          type: 'withdraw',
-          category: 'Moradia',
-          amount: 1500,
-          createdAt: new Date('2021-02-31'),
-        }
+        
       ]
     })
   },
