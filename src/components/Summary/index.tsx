@@ -32,7 +32,8 @@ export function Summary() {
           <p>Entradas</p>
           <img src={incomeImg} alt="Entrada" />
         </header>
-        <strong>
+        <strong
+        data-testid='income-amount'>
           {new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
@@ -41,10 +42,10 @@ export function Summary() {
       </div>
       <div>
         <header>
-          <p>Saídas </p>
+          <p>Saídas</p>
           <img src={outcomeImg} alt="Saídas" />
         </header>
-        <strong>
+        <strong data-testid='outcome-amount'>
           {new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
@@ -54,9 +55,13 @@ export function Summary() {
       <div className="highlight-background">
         <header>
           <p>Total</p>
-          <img src={totalImg} alt="Total" />
+          <img 
+          src={totalImg} 
+          alt="Total" 
+          />
         </header>
-        <strong>
+        <strong
+        data-testid='total-amount'>
           {" "}
           {new Intl.NumberFormat("pt-BR", {
             style: "currency",
