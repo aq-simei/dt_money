@@ -15,12 +15,12 @@ export function TransactionsTable() {
   return (
     <Container>
       <table>
-        <thead>
+        <thead data-testid='table-header'>
           <tr>
-            <th>Título</th>
-            <th>Valor</th>
-            <th>Categoria</th>
-            <th>Data</th>
+            <th data-testid='transaction-title-header'>Título</th>
+            <th data-testid='transaction-amount-header'>Valor</th>
+            <th data-testid='transaction-category-header'>Categoria</th>
+            <th data-testid='transaction-date-header'>Data</th>
           </tr>
         </thead>
         <tbody>
