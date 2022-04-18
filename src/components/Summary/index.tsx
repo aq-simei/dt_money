@@ -11,10 +11,10 @@ export function Summary() {
     (acc, transaction) => {
       if (transaction.type === "deposit") {
         acc.deposits += transaction.amount;
-        acc.total += acc.deposits;
+        acc.total += transaction.amount;
       } else {
         acc.withdraws += transaction.amount;
-        acc.total -= acc.withdraws;
+        acc.total -= transaction.amount;
       }
 
       return acc;
@@ -27,36 +27,45 @@ export function Summary() {
   );
   return (
     <Container>
-      <div>
+      <div
+      data-cy='income-card'>
         <header>
           <p>Entradas</p>
           <img src={incomeImg} alt="Entrada" />
         </header>
-        <strong>
+        <strong
+        data-testid='income-amount'
+        >
           {new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
           }).format(summary.deposits)}
         </strong>
       </div>
-      <div>
+      <div
+      data-cy='outcome-card'>
         <header>
-          <p>Saídas </p>
+          <p>Saídas</p>
           <img src={outcomeImg} alt="Saídas" />
         </header>
-        <strong>
+        <strong data-testid='outcome-amount'>
           {new Intl.NumberFormat("pt-BR", {
             style: "currency",
             currency: "BRL",
           }).format(summary.withdraws)}
         </strong>
       </div>
-      <div className="highlight-background">
+      <div className="highlight-background"
+      data-cy='total-card'>
         <header>
           <p>Total</p>
-          <img src={totalImg} alt="Total" />
+          <img 
+          src={totalImg} 
+          alt="Total" 
+          />
         </header>
-        <strong>
+        <strong
+        data-testid='total-amount'>
           {" "}
           {new Intl.NumberFormat("pt-BR", {
             style: "currency",
